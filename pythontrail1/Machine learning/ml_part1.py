@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import RandomOverSampler #pip install imblearn
 
-data=pd.read_csv("C:/Users/91943/OneDrive/Desktop/magic04.data")
+data=pd.read_csv("D:/pythontrail1/Machine learning/magic04.data")
 print(data)
 data.columns=["fLength","fWidth","fSize","fConc","fConc1","fAsym","fM3Long","fM3Trans"
               ,"fAlpha","fDist","class"]
@@ -166,4 +166,5 @@ print("Best validation loss:", least_val_loss)
 
 y_pred=least_loss_model.predict(x_test)
 y_pred=(y_pred>0.5).astype(int).reshape(-1,)
+
 print(classification_report(y_test,y_pred))
